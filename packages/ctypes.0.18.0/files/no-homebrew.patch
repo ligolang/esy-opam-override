@@ -1,0 +1,12 @@
+--- ./src/discover/discover.ml
++++ ./src/discover/discover.ml
+@@ -265,7 +265,7 @@
+       (fun () ->
+          Commands.command_succeeds "port info libffi");
+ 
+-  let have_pkg_config = have_pkg_config !is_homebrew !is_macports homebrew_prefix macports_prefix in
++  let have_pkg_config = have_pkg_config false false homebrew_prefix macports_prefix in
+ 
+   let setup_data = ref [] in
+   let have_libffi = test_feature "libffi"
+
