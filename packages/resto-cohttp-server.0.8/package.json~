@@ -1,0 +1,10 @@
+{
+  "build": [
+    [
+      "bash",
+      "-c",
+      "#{os == 'windows' ? 'patch -p1 < 0001-Disable-Unix-APIs-on-Windows.patch' : 'true' }"
+    ],
+    "dune build -p resto-cohttp-server -j 4"
+  ]
+}

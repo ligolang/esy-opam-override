@@ -1,0 +1,20 @@
+--- ./src/server.mli
++++ ./src/server.mli
+@@ -128,7 +128,7 @@
+     val output_content_media_type :
+       ?headers:Cohttp.Header.t ->
+       medias ->
+-      (string * Media_type.t, [> `Not_acceptable]) Result.result
++      (string * Media_type.t, [> `Not_acceptable]) result
+   end
+ 
+   module Agent : sig
+@@ -188,7 +188,7 @@
+       string list ->
+       ( Cohttp.Response.t * Cohttp_lwt.Body.t,
+         [> Directory.lookup_error] )
+-      Result.result
++      result
+       Lwt.t
+   end
+ end
