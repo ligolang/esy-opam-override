@@ -5,7 +5,7 @@
       "-c",
       "#{os == 'windows' ? 'patch -p1 < winpatch.patch' : 'true' }"
     ],
-    "env PATH=#{yarn-pkg-config.bin:$PATH} dune build -p class_group_vdf"
+    "bash ./build.sh #{yarn-pkg-config.bin}"
   ],
   "dependencies": {
     "esy-gmp": "*",
