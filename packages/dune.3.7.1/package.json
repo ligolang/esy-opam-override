@@ -6,6 +6,11 @@
       "patch --ignore-whitespace -p1 < winpatch.patch"
     ],
     [
+      "bash",
+      "-c",
+      "#{os == 'windows' ? 'patch -p1 < winpatch-libgcc.patch' : 'true'}"
+    ],
+    [
       "ocaml",
       "boot/bootstrap.ml",
       "-j",
